@@ -11,7 +11,7 @@ function Home() {
         <div className='home-content'>
           <h1>You got the travel plans, we got the travel vans.</h1>
           <p>Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
-          <button className='btn_primary'>Find your van</button>
+          <button className='btn btn_primary'>Find your van</button>
         </div>
       </div>
       <Footer />
