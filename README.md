@@ -8,4 +8,4 @@ __VanLife is a way for people to rent out camper vans for the next road trip adv
 ✅ Real database (Firebase)
 ✅ Deployed (Netlify)
 
-![vanlife image](/asset/vanlife-image.jpg)
+![vanlife image](/src/asset/vanlife-image.jpg)
