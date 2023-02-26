@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+
+:root{
+  --small-fs: .8rem;
+  --body-fs: 1rem;
+  --h1-fs: 2rem;
+
+  --font-color-white: #ffff;
+  --font-color-dark: #161616;
+  --dark-clr: #252525;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  font-family: 'Inter', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar */
+navbar{
+  background-color: #FFF7ED;
+  padding: 0 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+}
+.logo_nav{
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+.menu_nav{
+  list-style-type: none;
+  display: flex;
+}
+.item_menu{
+  margin: 1em;
+  text-decoration: none;
+  color: var(--font-color-dark);
+  font-family: inherit;
+}
+.item_menu:hover{
+  text-decoration: underline;
+}
+
+
+
+/* Typography */
+/* h1{ font-size: var(--h1-fs)} */
+
+/* Buttons */
+.btn_primary{
+  background-color: #FF8C38;
+  color: var(--font-color-white);
+  font-size: var(--body-fs);
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  padding: 1em;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+/* Layouts */
+.home-container{
+  background: url('./assets/background_home.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  padding: 3em;
+
+  color: var(--font-color-white);
 }
 
-.App-link {
-  color: #61dafb;
+.home-content{
+  max-width: 800px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Footer */
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-clr);
+  color: #AAAAAA;
+  font-size: var(--small-fs);
+  height: 10vh;
 }
