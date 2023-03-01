@@ -19,6 +19,8 @@ img {
 
 body {
   font-family: 'Inter', sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Navbar */
