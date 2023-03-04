@@ -5,13 +5,13 @@ function Navbar() {
 
     const navigate = useNavigate()
     return (
-        <navbar>
+        <div className='navbar'>
             <span className='logo_nav' onClick={() => navigate('/')}>#VANLIFE</span>
             <ul className='menu_nav'>
                 <li><Link className='item_menu' to="/about">About</Link></li>
                 <li><Link className='item_menu' to="/vans">Vans</Link></li>
             </ul>
-        </navbar>
+        </div>
     )
 }
 

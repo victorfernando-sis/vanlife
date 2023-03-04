@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './components/Home';
-import About from './components/About';
-import Vans from './components/Vans';
+import Home from './pages/Home';
+import About from './pages/About';
+import Vans from './pages/Vans';
 
+import './server'
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>

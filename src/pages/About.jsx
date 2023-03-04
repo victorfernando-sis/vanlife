@@ -1,9 +1,9 @@
 import React from 'react'
-import Footer from './Footer'
-import Navbar from './Navbar'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 import banner from '../assets/about_banner.png'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function About() {
   const navigate = useNavigate()
@@ -11,7 +11,6 @@ function About() {
     <>
       <Navbar />
       <div className='about-container'>
-
         <img className='about_banner' src={banner} alt={'Van banner'} />
         <div className='about-content'>
 
@@ -22,7 +21,7 @@ function About() {
           <div className='about-cta'>
             <h4>Your destination is waiting.
               Your van is ready.</h4>
-            <button className='btn btn_secondary' onClick={()=>navigate("/vans")}>Explore our vans</button>
+            <Link to="/vans" className='btn btn_secondary'>Explore our vans</Link>
           </div>
         </div>
       </div>
