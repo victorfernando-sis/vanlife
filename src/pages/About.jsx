@@ -3,10 +3,9 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 import banner from '../assets/about_banner.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function About() {
-  const navigate = useNavigate()
   return (
     <>
       <Navbar />

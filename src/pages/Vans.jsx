@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import VanFilter from '../components/VanFilter'
 import VanCard from '../components/VanCard'
@@ -21,7 +21,6 @@ function Vans() {
     fetchData()
 
   }, [])
-  // console.log(data)
 
 
   return (

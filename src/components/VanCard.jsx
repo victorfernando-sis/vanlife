@@ -1,7 +1,7 @@
 import React from 'react'
 
 function VanCard(props) {
-    const { id, name, price, type, image } = props
+    const { name, price, type, image } = props
 
     const bkgColor = (type) => {
         console.log(type)
