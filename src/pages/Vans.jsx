@@ -7,8 +7,6 @@ import { useNavigate, Link } from "react-router-dom";
 function Vans() {
   const [data, setData] = useState([]);
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,8 +29,6 @@ function Vans() {
         price={van.price}
         type={van.type}
         image={van.imageUrl}
-        // onClick={() => navigate(`vans/${van.id}`)}
-        onClick={() => console.log("clicked")}
       />
     </Link>
   ));
