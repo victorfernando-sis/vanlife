@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import VanFilter from "../components/VanFilter";
 import VanCard from "../components/VanCard";
-import { useNavigate, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 function Vans() {
   const [data, setData] = useState([]);
