@@ -44,11 +44,19 @@
   background-color: #161616;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: auto auto;
+}
 img {
   max-width: 100%;
 }
 
 body {
+  max-width: 1000px;
+  margin: auto auto;
   font-family: 'Inter', sans-serif;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -59,6 +67,7 @@ body {
 /* Navbar */
 .navbar {
   background-color: #FFF7ED;
+  border-bottom: #00000011 solid 1px;
   padding: 0 2em;
   display: flex;
   flex-direction: row;
@@ -180,9 +189,6 @@ h4 {
   max-width: 400px;
 }
 
-
-
-
 /* Vans Page */
 .van-container {
   padding: 2em;
@@ -218,9 +224,19 @@ h4 {
 
 .vans-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2em;
-  max-width: 900px;
+  max-width: 1000px;
+}
+
+.van-car-link {
+  text-decoration: none;
+  color: var(--dark-clr);
+  transition: 500ms;
+}
+
+.van-car-link:hover {
+  transform: scale(1.03);
 }
 
 .van-card {
@@ -237,18 +253,16 @@ h4 {
   grid-row-end: 2;
 
   border-radius: 10px;
-  margin-bottom: 1em;
+  margin: 1.5em 0;
 
 
 }
 
 .card-title {
-  /* border: 1px solid #000000; */
+  text-decoration: none;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 1;
-  /* justify-self: stretch ; */
-  /* grid-column-end: 3; */
 
   margin: 0;
 
@@ -266,7 +280,39 @@ h4 {
   grid-row-start: 3;
   justify-self: start;
   text-transform: capitalize;
-  color: var()
+}
+
+/* Van Info */
+
+.vans-info-backlink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--font-color-dark);
+  width: 110px;
+  font-size: var(--small-fs);
+  font-weight: 400;
+}
+
+.van-info-container {
+  /* max-width: 800px; */
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.card-info-title {
+  margin: .5em 0;
+}
+
+.card-info-price {
+  margin: 0;
+}
+
+.van-info-container>.card-tag {
+  width: fit-content;
+  margin: 0;
+  /* order: 1; */
 }
 
 /* Footer */
