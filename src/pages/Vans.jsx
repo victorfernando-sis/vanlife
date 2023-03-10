@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import VanFilter from "../components/VanFilter";
 import VanCard from "../components/VanCard";
 import {Link } from "react-router-dom";
@@ -35,7 +34,6 @@ function Vans() {
 
   return (
     <>
-      <Navbar />
       <div className="van-container">
         <h2 className="vans-page-title">Explore our van options</h2>
         <VanFilter />

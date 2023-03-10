@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { bkgColor } from "../utils";
 
 import { BsArrowLeft } from "react-icons/bs";
-import Footer from "../components/Footer";
 
 function VanInfo() {
   const [data, setData] = useState(null);
@@ -25,9 +23,8 @@ function VanInfo() {
 
   return (
     <>
-      <Navbar />
       <div className="van-info-container">
-        <Link to="/vans" className="vans-info-backlink">
+        <Link to=".." relative='path' className="vans-info-backlink">
           <BsArrowLeft />
           Back to all vans
         </Link>
@@ -57,7 +54,6 @@ function VanInfo() {
           <h2 className="loading"> Loading...</h2>
         )}
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,14 +1,10 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-
 import banner from '../assets/about_banner.png'
 import { Link } from 'react-router-dom'
 
 function About() {
   return (
     <>
-      <Navbar />
       <div className='about-container'>
         <img className='about_banner' src={banner} alt={'Van banner'} />
         <div className='about-content'>
@@ -24,7 +20,6 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   )
 }
