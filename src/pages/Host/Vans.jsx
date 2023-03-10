@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 
 function Vans() {
   const [hostVans, setHostVans] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch("/api/host/vans")
       .then((res) => res.json())
-      .then((data) => setHostVans(data.vans))
+      .then((data) => {
+        setLoading(false);
+        setHostVans(data.vans);
+      })
       .catch((e) =>
         console.log("An error ocurred trying to retrive host vans.", e)
       );
@@ -31,7 +36,7 @@ function Vans() {
   return (
     <div>
       <h2>You listed vans</h2>
-      {vansElement}
+      {loading ? <h5>Loading...</h5> : vansElement}
     </div>
   );
 }

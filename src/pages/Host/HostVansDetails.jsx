@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
+import { bkgColor } from "../../utils";
 
 function HostVansDetails() {
   const [van, setVan] = useState();
@@ -11,9 +13,11 @@ function HostVansDetails() {
       setIsLoading(true);
       fetch(`/api/host/vans/${id}`)
         .then((res) => res.json())
-        .then((data) => setVan(data.vans[0]))
+        .then((data) => {
+          setIsLoading(false);
+          setVan(data.vans[0]);
+        })
         .catch((e) => console.log("Fails to retrive host vans details.", e));
-      setIsLoading(false);
     }
     fetchData();
   }, [id]);
@@ -26,9 +30,13 @@ function HostVansDetails() {
         className="host-vans-details-img"
       />
       <div>
-        <div className="card-tag primary-tag">{van?.type}</div>
+        <div className={`card-tag primary-tag selected ${bkgColor(van?.type)}`}>
+          {van?.type}
+        </div>
         <h3>{van?.name}</h3>
-        <p>{`$${van?.price}`}</p>
+        <p>
+          <strong>{`$${van?.price}`}</strong>/day
+        </p>
       </div>
     </div>
   );
@@ -57,16 +65,22 @@ function HostVansDetails() {
     </div>
   );
 
-
   return (
     <section>
-      <Link to={".."} relative="path">
+      <Link to=".." relative="path" className="vans-info-backlink">
+        <BsArrowLeft />
         Back to all vans
       </Link>
       <div className="host-vans-details-container">
-        {isLoading ? <h2>Loading...</h2> : vansElement}
-        {linksElement}
-        <Outlet context={[van]} />
+        {isLoading ? (
+          <h5>Loading...</h5>
+        ) : (
+          <>
+            {vansElement}
+            {linksElement}
+            <Outlet context={[van]} />
+          </>
+        )}
       </div>
     </section>
   );
