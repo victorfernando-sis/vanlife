@@ -14,6 +14,18 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  padding-bottom: 10vh;
+  min-height: 100vh;
+  margin: auto auto;
+  font-family: 'Inter', sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #FFF7ED;
+  font-size: var(--body-fs);
+}
+
 .small-font {
   font-size: var(--small-fs);
 }
@@ -55,15 +67,6 @@ img {
   max-width: 100%;
 }
 
-body {
-  max-width: 1000px;
-  margin: auto auto;
-  font-family: 'Inter', sans-serif;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  background-color: #FFF7ED;
-  font-size: var(--body-fs);
-}
 
 /* Navbar */
 .navbar {
@@ -399,11 +402,12 @@ h4 {
   font-weight: 600;
 }
 
-.active-link{
+.active-link {
   font-weight: bold;
   text-decoration: underline;
 }
-.host-vans-gallery{
+
+.host-vans-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1em;
@@ -411,6 +415,9 @@ h4 {
 
 /* Footer */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

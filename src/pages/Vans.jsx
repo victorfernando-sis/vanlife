@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import VanFilter from "../components/VanFilter";
 import VanCard from "../components/VanCard";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Vans() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const response = await fetch("/api/vans");
         const data = await response.json();
         setData(data.vans);
       } catch (err) {
         console.log("An error occurred", err);
       }
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -39,7 +42,7 @@ function Vans() {
         <VanFilter />
         <div className="vans-grid">
           {/* {<h2>Loading...</h2>} */}
-          {data ? (vanElement) : <h2>Loading...</h2>}
+          {loading ? <h2>Loading...</h2> : vanElement}
         </div>
       </div>
     </>
