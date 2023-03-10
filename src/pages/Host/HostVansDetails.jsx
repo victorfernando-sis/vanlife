@@ -16,7 +16,7 @@ function HostVansDetails() {
       setIsLoading(false);
     }
     fetchData();
-  }, []);
+  }, [id]);
 
   const vansElement = (
     <div className="host-vans-details-box">
