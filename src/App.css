@@ -335,7 +335,6 @@ h4 {
   }
 }
 
-
 /* ========== LAYOUT HOST PAGE ========== */
 .host-layout-container {
   margin: 2em;
@@ -429,7 +428,8 @@ h4 {
   text-decoration: underline;
 }
 
-/* GALLERY */
+
+ /* GALLERY */
 
 .host-vans-gallery {
   display: grid;
@@ -439,7 +439,7 @@ h4 {
 
 /* REVIEWS */
 
-/* ========== LAYOUT FOOTER ========== */
+/* ========== LAYOUT NOTFOUND ========== */
 .notfound-page {
   display: flex;
   flex-direction: column;
