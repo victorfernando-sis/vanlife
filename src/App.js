@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./pages/Vans/Home";
-import About from "./pages/Vans/About";
-import Vans from "./pages/Vans/Vans";
-import VanInfo from "./pages/Vans/VanInfo";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Vans from "./pages/Vans";
+import VanInfo from "./pages/VanInfo";
 
 import "./server";
 import Layout from "./components/Layout";
@@ -17,7 +17,6 @@ import HostVansDetails from "./pages/Host/HostVansDetails";
 import HostVansDetailsInfo from "./pages/Host/HostVansDetailsInfo";
 import DetailedPricing from "./pages/Host/DetailedPricing";
 import Gallery from "./pages/Host/Gallery";
-import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -40,7 +39,6 @@ function App() {
             </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
