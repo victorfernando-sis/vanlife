@@ -79,7 +79,7 @@ h4 {
   align-items: center;
   justify-content: space-between;
   color: var(--font-color-dark);
-  width: 130px;
+  width: 160px;
   font-size: .9rem;
   font-weight: 400;
   margin: 2em 0;
@@ -186,6 +186,7 @@ h4 {
 }
 
 /* ========== LAYOUT ABOUT ========== */
+
 .about-container {
   background-size: cover;
 }
@@ -311,6 +312,29 @@ h4 {
   margin: 0;
 }
 
+.van-info-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .van-info-section img {
+    max-width: 30%;
+  }
+
+  .van-info-section {
+    flex-direction: row;
+  }
+
+  .van-info-section-content {
+    padding: 2em;
+  }
+
+  .van-info-section-content button {
+    max-width: 500px;
+  }
+}
+
 
 /* ========== LAYOUT HOST PAGE ========== */
 .host-layout-container {
@@ -405,7 +429,7 @@ h4 {
   text-decoration: underline;
 }
 
- /* GALLERY */
+/* GALLERY */
 
 .host-vans-gallery {
   display: grid;
@@ -414,6 +438,16 @@ h4 {
 }
 
 /* REVIEWS */
+
+/* ========== LAYOUT FOOTER ========== */
+.notfound-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin: auto; */
+  padding: 2em;
+  max-width: 700px;
+}
 
 /* ========== LAYOUT FOOTER ========== */
 footer {
