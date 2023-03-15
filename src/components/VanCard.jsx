@@ -1,8 +1,8 @@
 import React from "react";
 import { bkgColor } from "../utils";
-
 function VanCard(props) {
   const { name, price, type, image } = props;
+
   
 
   return (
