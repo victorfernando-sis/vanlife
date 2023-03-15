@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../assets/about_banner.png'
+import banner from '../../assets/about_banner.png'
 import { Link } from 'react-router-dom'
 
 function About() {
