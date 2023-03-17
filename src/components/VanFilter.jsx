@@ -5,7 +5,7 @@ function VanFilter({ searchParams, setSearchParams, filterType }) {
   const items = ["Simple", "Luxury", "Rugged"];
 
   return (
-    <div className="van-filter">
+    <div className="van-filter ">
       {items.map((element) => (
         <button
           onClick={() => setSearchParams({ type: element.toLocaleLowerCase() })}
