@@ -8,6 +8,7 @@ import VanInfo from "./pages/Vans/VanInfo";
 
 import "./server";
 import Layout from "./components/Layout";
+import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Host/Dashboard";
 import HostLayout from "./components/HostLayout";
 import Income from "./pages/Host/Income";
@@ -24,6 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="login" element={<Login/>}/>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
