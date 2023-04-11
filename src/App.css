@@ -175,7 +175,8 @@ h4 {
   /* border: 1px solid #115E59; */
   margin: auto;
 }
-.login-form input{
+
+.login-form input {
   width: 100%;
   height: 50px;
   border: 1px solid #b4b4b468;
@@ -251,12 +252,19 @@ h4 {
   max-width: 500px;
   margin-bottom: 2em;
 }
+.van-filter .card-tag{
+  height: 35px;
+  width: 100%;
+  max-width: 200px;
+  font-weight: bold ;
+}
 
 .van-filter-item {
   background-color: #FFEAD0;
   padding: .5em 2em;
   border: none;
   border-radius: 5px;
+  
 }
 
 .van-clear-filter {
@@ -264,6 +272,7 @@ h4 {
   padding: .5em 2em;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 /* GRID */
@@ -318,6 +327,8 @@ h4 {
   grid-row-start: 3;
   justify-self: start;
   text-transform: capitalize;
+  cursor: pointer;
+  
 }
 
 /* VAN INFO */
@@ -453,7 +464,7 @@ h4 {
 }
 
 
- /* GALLERY */
+/* GALLERY */
 
 .host-vans-gallery {
   display: grid;

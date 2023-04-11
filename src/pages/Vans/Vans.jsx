@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {
+  Link,
+  useSearchParams,
+  useLocation,
+  useLoaderData,
+} from "react-router-dom";
+
 import VanFilter from "../../components/VanFilter";
 import VanCard from "../../components/VanCard";
-import { Link, useSearchParams, useLocation } from "react-router-dom";
+import { getVans } from "../../api.js";
 
-function Vans() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+export async function loader() {
+  return await getVans();
+}
+
+export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  console.log(location);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/vans");
-        const data = await response.json();
-        setData(data.vans);
-      } catch (err) {
-        console.log("An error occurred", err);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  const data = useLoaderData();
 
   const filterType = searchParams.get("type");
   const vanElement = data
@@ -32,6 +27,7 @@ function Vans() {
     })
     .map((van) => (
       <Link
+        key={van.id}
         to={`${van.id}`}
         state={{
           type: filterType,
@@ -60,12 +56,10 @@ function Vans() {
           searchParams={searchParams}
           filterType={filterType}
         />
-        <div className="vans-grid">
-          {loading ? <h2>Loading...</h2> : vanElement}
-        </div>
+        <div className="vans-grid">{vanElement}</div>
       </div>
     </>
   );
 }
 
-export default Vans;
+// export default Vans;
