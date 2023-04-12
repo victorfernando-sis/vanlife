@@ -128,6 +128,17 @@ h4 {
   background-color: #161616;
 }
 
+.warning{
+  height: 30px;
+  width: 100%;
+  font-family: inherit;
+  padding: 5px;
+  font-size: 15px;
+  color: red;
+  border: none;
+  border-radius: 7px;
+}
+
 
 /* ========== LAYOUT NAVBAR ========== */
 .navbar {

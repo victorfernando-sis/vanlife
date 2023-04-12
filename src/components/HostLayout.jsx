@@ -1,5 +1,11 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { requireAuth } from "../utils";
+
+export async function loader() {
+  await requireAuth();
+  return null
+}
 
 function HostLayout() {
   const activeLink = {

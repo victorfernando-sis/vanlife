@@ -1,6 +1,15 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import Warning from "../../components/Warning";
 
-function Login() {
+export function loader() {
+  console.log("here");
+  return new URL(document.location).searchParams.get("message");
+}
+
+export default function Login() {
+  const message = useLoaderData();
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Submitted");
@@ -8,6 +17,7 @@ function Login() {
 
   return (
     <div className="login-page">
+      {message && <Warning message={message} />}
       <h1>Sign in to your account</h1>
       <form onSubmit={handleSubmit} className="login-form">
         <input
@@ -22,7 +32,7 @@ function Login() {
           placeholder="Password"
           className="login-password"
         />
-        <button className='btn btn_primary'>Sign in</button>
+        <button className="btn btn_primary">Sign in</button>
       </form>
       <p>
         Don't have an account? <a href="/"> Create one now</a>
@@ -30,5 +40,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

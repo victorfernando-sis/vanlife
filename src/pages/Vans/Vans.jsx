@@ -10,6 +10,7 @@ import VanFilter from "../../components/VanFilter";
 import VanCard from "../../components/VanCard";
 import { getVans } from "../../api.js";
 
+
 export async function loader() {
   return await getVans();
 }
@@ -61,5 +62,3 @@ export default function Vans() {
     </>
   );
 }
-
-// export default Vans;
