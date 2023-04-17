@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Link, NavLink, Outlet, useParams } from "react-router-dom";
+import React from "react";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLoaderData,
+  useParams,
+} from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
-import { bkgColor } from "../../utils";
+import { bkgColor, requireAuth } from "../../utils";
+import { getHostVans } from "../../api";
+
+export async function loader({ params, request }) {
+  await requireAuth(request);
+  return await getHostVans(params.id);
+}
 
 function HostVansDetails() {
-  const [van, setVan] = useState();
-  const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
-  useEffect(() => {
-    function fetchData() {
-      setIsLoading(true);
-      fetch(`/api/host/vans/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setIsLoading(false);
-          setVan(data.vans[0]);
-        })
-        .catch((e) => console.log("Fails to retrive host vans details.", e));
-    }
-    fetchData();
-  }, [id]);
+  const van = useLoaderData();
 
   const vansElement = (
     <div className="host-vans-details-box">
@@ -72,15 +70,9 @@ function HostVansDetails() {
         Back to all vans
       </Link>
       <div className="host-vans-details-container">
-        {isLoading ? (
-          <h5>Loading...</h5>
-        ) : (
-          <>
-            {vansElement}
-            {linksElement}
-            <Outlet context={[van]} />
-          </>
-        )}
+        {vansElement}
+        {linksElement}
+        <Outlet context={[van]} />
       </div>
     </section>
   );

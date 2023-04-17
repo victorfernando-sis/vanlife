@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { requireAuth } from "../../utils.js";
+import { getHostVans } from "../../api.js";
+
+export async function loader({request}) {
+  await requireAuth(request);
+  return getHostVans();
+}
 
 function Vans() {
-  const [hostVans, setHostVans] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setHostVans(data.vans);
-      })
-      .catch((e) =>
-        console.log("An error ocurred trying to retrive host vans.", e)
-      );
-  }, []);
-
+  const hostVans = useLoaderData()
+  
   const vansElement = hostVans.map((item) => (
-    <Link to={`/host/vans/${item.id}`}>
+    <Link to={`/host/vans/${item.id}`} key={item.id}>
       <div className="host-vans-list">
         <img
           src={item.imageUrl}
@@ -35,8 +28,8 @@ function Vans() {
   ));
   return (
     <div>
-      <h2>You listed vans</h2>
-      {loading ? <h5>Loading...</h5> : vansElement}
+      <h2>Your listed vans</h2>
+      {vansElement}
     </div>
   );
 }
