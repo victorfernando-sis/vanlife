@@ -3,8 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import { requireAuth } from "../../utils.js";
 import { getHostVans } from "../../api.js";
 
-export function loader() {
-  requireAuth();
+export async function loader({request}) {
+  await requireAuth(request);
   return getHostVans();
 }
 
@@ -28,7 +28,7 @@ function Vans() {
   ));
   return (
     <div>
-      <h2>You listed vans</h2>
+      <h2>Your listed vans</h2>
       {vansElement}
     </div>
   );

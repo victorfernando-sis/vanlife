@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { BiUserCircle } from "react-icons/bi";
+import UserMenu from "./UserMenu";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -42,13 +42,7 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            className="item_menu"
-            style={({ isActive }) => (isActive ? activeLink : null)}
-            to="/login"
-          >
-            <BiUserCircle style={{fontSize:"20px"}} />
-          </NavLink>
+          <UserMenu />
         </li>
       </ul>
     </div>

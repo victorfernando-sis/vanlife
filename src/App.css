@@ -32,6 +32,7 @@ img {
 
 a {
   text-decoration: none;
+  color: #000000;
 }
 
 /* ========== TYPOGRAPHY ========== */
@@ -128,7 +129,7 @@ h4 {
   background-color: #161616;
 }
 
-.warning{
+.warning {
   height: 30px;
   width: 100%;
   font-family: inherit;
@@ -149,7 +150,7 @@ h4 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 60px;
 }
 
 .logo_nav {
@@ -160,6 +161,7 @@ h4 {
 .menu_nav {
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
 .item_menu {
@@ -170,6 +172,75 @@ h4 {
 
 .item_menu:hover {
   text-decoration: underline;
+}
+
+.user-icon {
+  color: #000000;
+}
+
+.user-menu {
+  margin: 1rem;
+  border-radius: 10px;
+  transform: scale(1.2);
+  position: relative;
+  padding-right: 10px;
+}
+
+.user-nav-icon {
+  height: 100%;
+  border: 1px solid transparent;
+}
+
+.user-nav-icon:hover .dropdown {
+  left: 85%;
+  transition: 300ms;
+}
+
+.user-menu span,
+.user-menu>.icon {
+  display: none;
+}
+
+.dropdown {
+  left: 100%;
+  background-color: #252525c8;
+  position: absolute;
+  right: 0;
+  width: 100px;
+  padding: .3rem 1rem;
+}
+
+.dropdown button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+@media (min-width: 550px) {
+  .user-menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #252525c8;
+    color: var(--font-color-white);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transform: scale(1);
+    gap: 2px;
+    font-size: 13px;
+  }
+
+  .user-menu span,
+  .user-menu>.icon {
+    display: block;
+  }
+
+  .dropdown {
+    /* display: block; */
+    width: 150px;
+  }
 }
 
 /* ========== LAYOUT LOGIN ========== */
@@ -183,7 +254,6 @@ h4 {
 }
 
 .login-form {
-  /* border: 1px solid #115E59; */
   margin: auto;
 }
 
@@ -263,11 +333,12 @@ h4 {
   max-width: 500px;
   margin-bottom: 2em;
 }
-.van-filter .card-tag{
+
+.van-filter .card-tag {
   height: 35px;
   width: 100%;
   max-width: 200px;
-  font-weight: bold ;
+  font-weight: bold;
 }
 
 .van-filter-item {
@@ -275,7 +346,7 @@ h4 {
   padding: .5em 2em;
   border: none;
   border-radius: 5px;
-  
+
 }
 
 .van-clear-filter {
@@ -339,7 +410,7 @@ h4 {
   justify-self: start;
   text-transform: capitalize;
   cursor: pointer;
-  
+
 }
 
 /* VAN INFO */
@@ -382,12 +453,10 @@ h4 {
 }
 
 /* ========== LAYOUT HOST PAGE ========== */
-.host-layout-container {
-  margin: 2em;
-}
 
 .host-nav {
   display: flex;
+  margin: 2em;
 }
 
 .host-nav a {
@@ -403,7 +472,148 @@ h4 {
 }
 
 /* DASHBOARD */
+
+.host-dashboard-earnings {
+  background-color: #ffead0;
+  padding: 37px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.host-dashboard-earnings>.info>h1 {
+  font-size: 36px;
+  color: #161616;
+  margin: 0;
+}
+
+.host-dashboard-earnings>.info>p {
+  color: #4d4d4d;
+}
+
+.host-dashboard-earnings>.info>p>span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.host-dashboard-earnings>.info>h2 {
+  margin: 0;
+  font-size: 38px;
+  color: #161616;
+  font-weight: 900;
+}
+
+.host-dashboard-reviews {
+  background-color: #ffddb2;
+  padding: 25px 26px;
+  display: flex;
+  align-items: center;
+}
+
+.host-dashboard-reviews>h2 {
+  margin: 0;
+}
+
+.host-dashboard-reviews .star {
+  color: #ff8c38;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+.host-dashboard-reviews p {
+  margin-left: 5px;
+  font-size: 20px;
+  color: #4d4d4d;
+  margin-right: auto;
+}
+
+.host-dashboard-reviews p>span {
+  font-weight: bold;
+  color: #161616;
+}
+
+.host-dashboard-vans {
+  padding: 38px 26px;
+}
+
+.host-dashboard-vans>.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.host-dashboard-vans .host-vans-info > p{
+  margin-left: 1rem;
+  width: 100%;
+}
+.host-vans-list > .view-link{
+  width: 50%;
+  text-align: end;
+  /* right: 0; */
+  /* margin-left: 30px; */
+}
+
 /* INCOME */
+.host-income {
+  padding-inline: 26px;
+  color: #161616;
+}
+
+.host-income > p {
+  color: #4d4d4d;
+}
+
+.host-income > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.host-income > h2 {
+  font-size: 38px;
+  color: #161616;
+  font-weight: 900;
+}
+
+img.graph {
+  width: 100%;
+  max-width: 500px;
+}
+
+.host-income .info-header > p {
+  color: #4d4d4d;
+}
+
+.host-income .info-header > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.host-income .info-header > h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 60px;
+}
+
+.host-income .transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 31px;
+  padding: 35px 29px;
+  border-radius: 6px;
+}
+.host-income .transaction > h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.host-income .transaction > p {
+  font-weight: 500;
+  font-size: 20px;
+  color: #4d4d4d;
+}
 
 /* VANS */
 .host-vans-list {
@@ -415,6 +625,7 @@ h4 {
   max-height: 160px;
   padding: 1.5em;
   display: flex;
+  align-items: center;
   transition: 250ms;
 }
 
@@ -484,6 +695,69 @@ h4 {
 }
 
 /* REVIEWS */
+
+
+.host-reviews {
+  padding-inline: 26px;
+  color: #161616;
+}
+
+.host-reviews .top-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.host-reviews .top-text > h2 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.host-reviews .top-text > p {
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.host-reviews .top-text > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.host-reviews > img {
+  margin-bottom: 36px;
+}
+
+.host-reviews .review {
+  margin-block: 25px;
+}
+
+.host-reviews .review .info {
+  display: flex;
+}
+
+.host-reviews .review .name {
+  color: #161616;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.host-reviews .review .date {
+  color: #8c8c8c;
+}
+
+.host-reviews hr {
+  background-color: #c7c7c7;
+  height: 1px;
+  border: 0;
+}
+
+.host-reviews .review-star {
+  color: #ff8c38;
+  margin-right: 5px;
+}
+
 
 /* ========== LAYOUT NOTFOUND ========== */
 .notfound-page {

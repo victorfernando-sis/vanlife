@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 function Warning(props) {
   const { message } = props;
   const [isActive, setIsActive] = useState(true);
-
+try {
+    
+} catch (error) {
+    
+}
   setTimeout(() => {
     setIsActive((prev) => !prev);
   }, 5000);
