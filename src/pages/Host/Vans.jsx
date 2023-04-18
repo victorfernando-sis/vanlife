@@ -5,11 +5,12 @@ import { getHostVans } from "../../api.js";
 
 export async function loader({request}) {
   await requireAuth(request);
-  return getHostVans();
+  return await getHostVans();
 }
 
 function Vans() {
   const hostVans = useLoaderData()
+  console.log(hostVans)
   
   const vansElement = hostVans.map((item) => (
     <Link to={`/host/vans/${item.id}`} key={item.id}>

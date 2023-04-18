@@ -8,18 +8,18 @@ import {
 } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import { bkgColor, requireAuth } from "../../utils";
-import { getHostVans } from "../../api";
+import { getVan } from "../../api";
 
 export async function loader({ params, request }) {
   await requireAuth(request);
-  return await getHostVans(params.id);
+  return await getVan(params.id);
 }
 
 function HostVansDetails() {
   const { id } = useParams();
 
   const van = useLoaderData();
-
+  
   const vansElement = (
     <div className="host-vans-details-box">
       <img

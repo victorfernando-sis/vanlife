@@ -9,7 +9,7 @@ import "./App.css";
 import Home from "./pages/Vans/Home";
 import About from "./pages/Vans/About";
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
-import VanInfo from "./pages/Vans/VanInfo";
+import VanInfo, { loader as vansInfoLoader } from "./pages/Vans/VanInfo";
 
 import "./server";
 import Layout from "./components/Layout";
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
-      <Route path="vans/:id" element={<VanInfo />} />
+      <Route path="vans/:id" element={<VanInfo />} loader={vansInfoLoader} />
 
       <Route path="host" element={<HostLayout />} loader={hostLayoutLoader}>
         <Route index element={<Dashboard />} loader={dashboardLoader} />
