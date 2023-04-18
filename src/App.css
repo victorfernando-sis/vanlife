@@ -16,7 +16,6 @@
 
 body {
   position: relative;
-  overflow: hidden;
   padding-bottom: 10vh;
   min-height: 100vh;
   margin: auto auto;
@@ -193,8 +192,8 @@ h4 {
 }
 
 .user-nav-icon:hover .dropdown {
-  left: 85%;
-  transition: 300ms;
+  display: block;
+  transition: 500ms;
 }
 
 .user-menu span,
@@ -203,7 +202,7 @@ h4 {
 }
 
 .dropdown {
-  left: 100%;
+  display: none;
   background-color: #252525c8;
   position: absolute;
   right: 0;
