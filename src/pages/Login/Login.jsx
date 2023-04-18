@@ -14,7 +14,7 @@ export async function action({ request }) {
     const data = await loginUser({ email, password });
     const redirectTo = new URL(request.url).searchParams.get('redirectTo') || '/host'
     localStorage.setItem("user", JSON.stringify(data));
-    return (window.location.href = `${redirectTo}`);
+    return window.location.href = `${redirectTo}`;
   } catch (error) {
     return error.message;
   }
@@ -34,7 +34,7 @@ export default function Login() {
           aria-label="email"
           placeholder="Email address"
           className="login-email"
-        />
+          />
         <input
           type="password"
           name="password"
@@ -46,7 +46,8 @@ export default function Login() {
       </Form>
       <p>
         Don't have an account? <a href="/"> Create one now</a>
-      </p>
+      </p><br/>
+      <p>Testing account: b@b.com | p123</p>
     </div>
   );
 }
