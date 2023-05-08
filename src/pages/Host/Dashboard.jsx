@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, defer, Await, useLoaderData } from "react-router-dom";
-import { getHostVans } from "../../api";
+import { getHostVans } from "../../api/firestore";
 import { requireAuth } from "../../utils";
 import { BsStarFill } from "react-icons/bs";
 

@@ -8,8 +8,8 @@ import {
 
 import VanFilter from "../../components/VanFilter";
 import VanCard from "../../components/VanCard";
-import { getVans } from "../../api.js";
-
+import { getVans } from "../../api/firestore";
+import Forecast from "../../components/Forecast";
 
 export async function loader() {
   return await getVans();
@@ -51,6 +51,7 @@ export default function Vans() {
   return (
     <>
       <div className="van-container">
+        <Forecast />
         <h2 className="vans-page-title">Explore our van options</h2>
         <VanFilter
           setSearchParams={setSearchParams}
