@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation, useLoaderData } from "react-router-dom";
 import { bkgColor } from "../../utils";
-import { getVan } from "../../api";
+import { getVan } from "../../api/firestore";
 
 import { BsArrowLeft } from "react-icons/bs";
 

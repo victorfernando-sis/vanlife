@@ -7,8 +7,8 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { getErrorMessage } from "./utils";
-import { firebaseConfig } from "./config";
+import { getErrorMessage } from "../utils";
+import { firebaseConfig } from "../config";
 
 const app = initializeApp(firebaseConfig);
 

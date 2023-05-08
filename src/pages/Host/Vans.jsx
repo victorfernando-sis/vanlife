@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { requireAuth } from "../../utils.js";
-import { getHostVans } from "../../api.js";
+import { getHostVans } from "../../api/firestore.js";
 
 export async function loader({request}) {
   await requireAuth(request);

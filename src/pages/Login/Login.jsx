@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Warning from "../../components/Warning";
-import { createNewUser, signinUser, signinWithGoogle } from "../../api";
+import { createNewUser, signinUser, signinWithGoogle } from "../../api/auth";
 import { FcGoogle } from "react-icons/fc";
 
 

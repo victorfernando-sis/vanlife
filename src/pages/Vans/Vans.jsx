@@ -8,7 +8,7 @@ import {
 
 import VanFilter from "../../components/VanFilter";
 import VanCard from "../../components/VanCard";
-import { getVans } from "../../api.js";
+import { getVans } from "../../api/firestore";
 import Forecast from "../../components/Forecast";
 
 export async function loader() {

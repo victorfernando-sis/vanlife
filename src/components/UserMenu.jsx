@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
-import { logout } from "../api";
+import { logout } from "../api/auth";
 import { onAuthStateChanged,getAuth } from "firebase/auth";
 
 function handleLogout() {

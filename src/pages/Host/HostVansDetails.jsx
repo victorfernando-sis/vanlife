@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import { bkgColor, requireAuth } from "../../utils";
-import { getVan } from "../../api";
+import { getVan } from "../../api/firestore";
 
 export async function loader({ params, request }) {
   await requireAuth(request);
