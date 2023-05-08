@@ -7,52 +7,12 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import {
-  getFirestore,
-  getDocs,
-  getDoc,
-  doc,
-  collection,
-  query,
-  where,
-} from "firebase/firestore/lite";
 import { getErrorMessage } from "./utils";
 import { firebaseConfig } from "./config";
 
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-const db = getFirestore(app);
-const vansCollectionRef = collection(db, "vans");
-
-export async function getVans() {
-  const querySnapshot = await getDocs(vansCollectionRef);
-  const dataArr = querySnapshot.docs.map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-  }));
-  return dataArr;
-}
-
-export async function getVan(id) {
-  const docRef = doc(db, "vans", id);
-  const vanSnapshot = await getDoc(docRef);
-  return {
-    ...vanSnapshot.data(),
-    id: vanSnapshot.id,
-  };
-}
-
-export async function getHostVans() {
-  const q = query(vansCollectionRef, where("hostId", "==", "123"));
-  const querySnapshot = await getDocs(q);
-  const dataArr = querySnapshot.docs.map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-  }));
-  return dataArr;
-}
-
 /* eslint-disable no-throw-literal */
 
 export async function createNewUser(creds) {
@@ -88,11 +48,12 @@ export async function signinWithGoogle(creds) {
   const provider = new GoogleAuthProvider();
 
   signInWithPopup(auth, provider)
-  .then((result) => {
-      return (window.location.href = '/host');
-  }).catch((error) => {
-    // Handle Errors here.
-  });
+    .then((result) => {
+      return (window.location.href = "/host");
+    })
+    .catch((error) => {
+      throw new Error(error);
+    });
 }
 
 export async function logout() {

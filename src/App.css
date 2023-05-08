@@ -61,7 +61,7 @@ h4 {
   margin: 1em 0;
 }
 
-.btn-link{
+.btn-link {
   background: none;
   border: none;
   font-family: inherit;
@@ -70,7 +70,8 @@ h4 {
   text-decoration: underline;
   transition: 200ms;
 }
-.btn-link:hover{
+
+.btn-link:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
@@ -106,7 +107,7 @@ h4 {
   text-decoration: underline;
 }
 
-.google-button{
+.google-button {
   height: 40px;
   width: 180px;
   display: flex;
@@ -119,7 +120,8 @@ h4 {
   border-radius: 3px;
   cursor: pointer;
 }
-.google-button:hover{
+
+.google-button:hover {
   background-color: rgba(116, 255, 246, 0.114);
 }
 
@@ -171,6 +173,46 @@ h4 {
   border-radius: 7px;
 }
 
+.weather-card {
+  max-width: 300px;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-around;
+  background: rgb(228, 197, 45);
+  background: linear-gradient(90deg, rgba(228, 197, 45, 0.8758096988795518) 0%, rgba(136, 255, 0, 0.03827468487394958) 100%);
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 4px 5px;
+  color: #755706;
+  font-size: 0.8rem;
+}
+
+.weather-card-degree,
+.weather-card-date-location {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3em;
+  padding: 5px;
+}
+
+.weather-card-degree>.temp {
+  font-weight: bold;
+  font-size: 28px
+}
+
+.weather-card-date-location {
+  border-left: 1px solid #7557063e;
+  padding-left: 5px;
+}
+
+@media (min-width: 610px){
+  .weather-card{
+    position: absolute;
+    right: 0;
+    top: 10vh;
+  }
+}
 
 /* ========== LAYOUT NAVBAR ========== */
 .navbar {
@@ -574,11 +616,12 @@ h4 {
   align-items: center;
 }
 
-.host-dashboard-vans .host-vans-info > p{
+.host-dashboard-vans .host-vans-info>p {
   margin-left: 1rem;
   width: 100%;
 }
-.host-vans-list > .view-link{
+
+.host-vans-list>.view-link {
   width: 50%;
   text-align: end;
   /* right: 0; */
@@ -591,16 +634,16 @@ h4 {
   color: #161616;
 }
 
-.host-income > p {
+.host-income>p {
   color: #4d4d4d;
 }
 
-.host-income > p span {
+.host-income>p span {
   text-decoration: underline;
   font-weight: bold;
 }
 
-.host-income > h2 {
+.host-income>h2 {
   font-size: 38px;
   color: #161616;
   font-weight: 900;
@@ -611,16 +654,16 @@ img.graph {
   max-width: 500px;
 }
 
-.host-income .info-header > p {
+.host-income .info-header>p {
   color: #4d4d4d;
 }
 
-.host-income .info-header > p span {
+.host-income .info-header>p span {
   text-decoration: underline;
   font-weight: bold;
 }
 
-.host-income .info-header > h3 {
+.host-income .info-header>h3 {
   font-weight: 700;
   font-size: 24px;
   margin-top: 60px;
@@ -635,13 +678,14 @@ img.graph {
   padding: 35px 29px;
   border-radius: 6px;
 }
-.host-income .transaction > h3 {
+
+.host-income .transaction>h3 {
   font-size: 36px;
   font-weight: 600;
   margin: 0;
 }
 
-.host-income .transaction > p {
+.host-income .transaction>p {
   font-weight: 500;
   font-size: 20px;
   color: #4d4d4d;
@@ -740,24 +784,24 @@ img.graph {
   margin-bottom: 32px;
 }
 
-.host-reviews .top-text > h2 {
+.host-reviews .top-text>h2 {
   font-weight: 700;
   font-size: 32px;
   margin: 0;
   margin-right: 20px;
 }
 
-.host-reviews .top-text > p {
+.host-reviews .top-text>p {
   margin: 0;
   color: #4d4d4d;
 }
 
-.host-reviews .top-text > p span {
+.host-reviews .top-text>p span {
   text-decoration: underline;
   font-weight: bold;
 }
 
-.host-reviews > img {
+.host-reviews>img {
   margin-bottom: 36px;
 }
 

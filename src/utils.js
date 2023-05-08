@@ -28,6 +28,7 @@ export function getErrorMessage(errorCode) {
       break;
     case "auth/different-password":
       errorMessage = "The passwords don't match";
+      break;
     default:
   }
   return errorMessage;
